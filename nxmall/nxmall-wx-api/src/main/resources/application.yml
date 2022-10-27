@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: db, core, wx
+  messages:
+    encoding: UTF-8
+
+server:
+  port: 8082
+
+logging:
+  level:
+    root:  ERROR
+    org.springframework:  ERROR
+    org.mybatis:  ERROR
+    org.mallmark.litemall.wx:  DEBUG
+    org.mallmark.litemall:  ERROR
+
+swagger:
+  production: false

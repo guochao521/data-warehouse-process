@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.mall</groupId>
+    <artifactId>nxmall_process</artifactId>
+    <version>1.0.0</version>
+
+    <modules>
+        <module>nxmall</module>
+        <module>data-simulate</module>
+        <module>common_base</module>
+        <module>flink_real_warehouse</module>
+    </modules>
+
+    <packaging>pom</packaging>
+
+    <properties>
+        <target.version>1.8</target.version>
+        <source.version>1.8</source.version>
+        <encoding>UTF-8</encoding>
+        <lombok.version>1.18.12</lombok.version>
+        <lang3.version>3.9</lang3.version>
+        <flume.version>1.9.0</flume.version>
+        <hive.version>3.1.2</hive.version>
+        <scala.version>2.12.12</scala.version>
+        <scala.major.version>2.12</scala.major.version>
+        <scala.maven.version>4.3.1</scala.maven.version>
+        <jblas.version>1.2.5</jblas.version>
+        <kafka.version>2.6.3</kafka.version>
+        <flink.version>1.13.1</flink.version>
+        <hudi.version>0.10.0</hudi.version>
+        <fastjson.version>1.2.78</fastjson.version>
+        <hadoop.version>3.3.1</hadoop.version>
+        <json4s.version>4.0.4</json4s.version>
+    </properties>
+
+    <dependencyManagement>
+
+        <dependencies>
+
+            <dependency>
+                <groupId>org.json4s</groupId>
+                <artifactId>json4s-native_2.12</artifactId>
+                <version>${json4s.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.json4s</groupId>
+                <artifactId>json4s-jackson_2.12</artifactId>
+                <version>${json4s.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${lang3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.apache.flume</groupId>
+                <artifactId>flume-ng-core</artifactId>
+                <version>${flume.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.hive</groupId>
+                <artifactId>hive-exec</artifactId>
+                <version>${hive.version}</version>
+            </dependency>
+
+            <!--     spark       -->
+            <dependency>
+                <groupId>org.scala-lang</groupId>
+                <artifactId>scala-library</artifactId>
+                <version>${scala.version}</version>
+            </dependency>
+
+            <!--   线性代数     -->
+            <dependency>
+                <groupId>org.jblas</groupId>
+                <artifactId>jblas</artifactId>
+                <version>${jblas.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.tlh</groupId>
+                <artifactId>admin-auth-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- kafka -->
+
+
+            <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-streaming-java -->
+
+
+            <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-runtime-web -->
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-runtime-web_${scala.major.version}</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-streaming-java_${scala.major.version}</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-core -->
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-core</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-clients -->
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-clients_${scala.major.version}</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-java -->
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-java</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-table-common -->
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-table-common</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-table-planner -->
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-table-planner_${scala.major.version}</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-table-api-java-bridge -->
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-table-api-java-bridge_${scala.major.version}</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+
+            <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-table-api-java -->
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-table-api-java</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-connector-kafka -->
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-connector-kafka_${scala.major.version}</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-statebackend-rocksdb_${scala.major.version}</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-table-planner -->
+     <!--       <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-table-planner_${scala.major.version}</artifactId>
+                <version>${flink.version}</version>
+            </dependency>-->
+
+            <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-table-planner-blink -->
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-table-planner-blink_${scala.major.version}</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-json -->
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-json</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-avro</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-connector-base</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+
+            <!-- flink操作hdfs需要的包  -->
+            <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-hadoop-compatibility -->
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-hadoop-compatibility_${scala.major.version}</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-core</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+
+
+
+            <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-client -->
+            <dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-client</artifactId>
+                <version>${hadoop.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-hdfs -->
+            <dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-hdfs</artifactId>
+                <version>${hadoop.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.hudi/hudi-flink -->
+            <dependency>
+                <groupId>org.apache.hudi</groupId>
+                <artifactId>hudi-flink_${scala.major.version}</artifactId>
+                <version>${hudi.version}</version>
+            </dependency>
+
+
+            <!-- https://mvnrepository.com/artifact/org.apache.hudi/hudi-flink-client -->
+            <dependency>
+                <groupId>org.apache.hudi</groupId>
+                <artifactId>hudi-flink-client</artifactId>
+                <version>${hudi.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka-clients</artifactId>
+                <version>${kafka.version}</version>
+            </dependency>
+
+
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${source.version}</source>
+                    <target>${target.version}</target>
+                    <encoding>${encoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>net.alchim31.maven</groupId>
+                    <artifactId>scala-maven-plugin</artifactId>
+                    <version>${scala.maven.version}</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>compile</goal>
+                                <goal>testCompile</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <scalaVersion>${scala.version}</scalaVersion>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>

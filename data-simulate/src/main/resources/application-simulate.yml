@@ -1,0 +1,83 @@
+simulate:
+#  baseUrl: http://log-center
+  baseUrl : http://192.168.52.120
+  date: 2020-11-20 #业务日期
+  use-date: false # 是否使用指定日期
+  offline-enable: true # 离线数据
+  schedule:
+    action: 0/30 * * * * ?
+    business: 0/30 * * * * ?
+    frond:   0/30 * * * * ?
+  #  frond: 0 0/3 * * * ?
+    reload:
+      enable: true
+      cron: 0 0/3 * * * ?
+  user:
+    count: 2 # 是否生成新用户
+    male-rate: 20 #男性比例
+    update-rate: 20 # 更新用户的比例
+  favor:
+    count: 20 #收藏数量
+    cancel-rate: 10 #收藏取消比例
+  cart:
+    count: 10 #购物车数量
+    sku-max-count-per-cart: 3 # 每个商品最多购物个数
+    delete-rate: 5 # 移除购物车的概率
+  order:
+    user-rate: 80 #用户下单比例
+    sku-rate: 70 #购物中购买商品比例
+    join-activity: false #是否参加活动
+    join-activity-rate: 70 #参加活动比率
+    use-coupon: true #是否使用购物券
+    use-coupon-rate: 70 #是否使用购物券比率
+  coupon:
+    user-count: 10 #购物券领取人数
+  payment:
+    rate: 50 #支付比例
+    payment-type: #支付方式 支付宝：微信
+      - 40
+      - 60
+  ship:
+    rate: 40 # 发货比率
+    ship-channel:
+      - "ZTO"
+      - "YTO"
+      - "YD"
+      - "YZPY"
+      - "EMS"
+      - "DBL"
+      - "FAST"
+      - "ZJS"
+      - "TNT"
+      - "UPS"
+      - "DHL"
+      - "FEDEX"
+      - "FEDEX_GJ"
+  comment:
+    rate: 10 # 评论比率
+    appraise-rate: #评价比例 好：中：差：自动
+      - 30
+      - 10
+      - 10
+      - 50
+  confirm:
+    rate: 50 # 确认收货比率
+  refund:
+    rate: 30 # 退款的比率
+    reason-rate: #退款原因比例：质量问题 商品描述与实际描述不一致 缺货 号码不合适 拍错 不想买了 其他
+      - 30
+      - 10
+      - 20
+      - 5
+      - 15
+      - 5
+      - 5
+  front-app: # 前端app请求模拟
+    enable: true
+   # base-url: http://log-center:8082
+  #  http://localhost:8082
+    base-url: http://192.168.52.120:8082
+    requests: 50 # 每个周期请求数
+    core-pool-size: 20 # 并发请求核心线程数
+    maximum-pool-size: 100 # 最大线程数
+    keep-alive-time: 5000 # 空闲时间
